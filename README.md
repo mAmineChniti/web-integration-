@@ -1,4 +1,5 @@
 ⏱️ Chrono Masters – Plateforme de Gestion du Temps pour Étudiants
+
 📝 Description du Projet
 
 Les étudiants de 4 TWIN 4 font face à une surcharge quotidienne :
@@ -37,9 +38,9 @@ Les étudiants locataires gérant cours + responsabilités domestiques.
 
 🧰 Technologies Utilisées
 
-HTML – Structure des pages
-TailwindCSS – Design rapide et responsive
-Figma – Conception UI/UX et maquettes du projet
+* HTML – Structure des pages
+* TailwindCSS – Design rapide et responsive
+* Figma – Conception UI/UX et maquettes du projet
 
 🧩 Problèmes Rencontrés & Solutions Apportées
 
