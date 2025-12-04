@@ -63,7 +63,7 @@
         <nav class="flex flex-col gap-2">
           
           <!-- Home Menu Item -->
-         <a href="index.html" 
+       <a href="index.html" 
    class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
     
     <i class="fas fa-home text-dark-text"
@@ -111,142 +111,184 @@
       </aside>
 
 
-      <!-- MAIN CONTENT -->
-      <main class="col-span-9">
 
-        <div class="w-full px-12">
+      <!-- MAIN -->
+      <main class="col-span-9 flex flex-col gap-8">
 
-          <!-- RETOUR -->
-          <div class="flex items-center gap-2 cursor-pointer text-dark-text mb-6">
-            <a href="cours.html" class="flex items-center gap-2">
-              <i class="fas fa-arrow-left"></i>
-              <span>Retour</span>
-            </a>
+        <!-- RETOUR -->
+        <div class="flex items-center gap-2 text-dark-text text-sm cursor-pointer mt-2">
+          <i class="fas fa-arrow-left text-xs"></i>
+          <span onclick="history.back()">Retour</span>
+        </div>
+
+        <!-- BANDEAU MÉTHODE D'APPRENTISSAGE -->
+        <section class="flex justify-center mt-4">
+          <div
+            style="
+              width: 450px;
+              height: 36px;
+              background: #E5ECF5;
+              border-radius: 18px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-family: Inter, sans-serif;
+              font-size: 16px;
+              font-weight: 500;
+              color: #1D1D1B;
+            "
+          >
+            Méthode d'apprentissage
           </div>
+        </section>
 
-          <!-- BARRE AFFICHAGE -->
-          <div class="w-full flex justify-center mb-10">
-            <div class="w-[453px] h-[78px] border border-gray-300 rounded-xl flex items-center justify-center text-dark-text text-xl font-semibold">
-                Affichage cours
-            </div>
-          </div>
+        <!-- LIGNE -->
+        <div class="flex justify-center mt-6">
+          <div style="width: 430px; height:1px; background:#1D1D1B;"></div>
+        </div>
 
-          <!-- TEXTE + IMAGE -->
-          <div class="flex justify-between items-start mt-5">
+        <!-- TITRE TESTER VOS CONNAISSANCES -->
+        <section class="mt-10 flex justify-center">
+          <h2
+            style="
+              font-family: Inter, sans-serif;
+              font-size: 20px;
+              font-weight: 500;
+              color:#1D1D1B;
+            "
+          >
+            Tester vos connaissances
+          </h2>
+        </section>
 
-            <!-- TEXTE -->
-            <div class="w-[348px]">
-              <h2 class="text-2xl font-bold mb-4">UX Design</h2>
+        <!-- BLOC 1 : PDF -> VIDEO -->
+        <section class="mt-12 flex justify-center">
+          <div class="flex items-center gap-24">
 
-              <p class="text-dark-text text-base leading-tight mb-4">
-                Découvrez le processus de conception centré sur l'utilisateur
+            <!-- PDF -->
+            <div class="flex flex-col items-center">
+              <img
+                src="images/pdf.png"
+                alt="PDF"
+                style="width:140px; height:140px; object-fit:contain;"
+              />
+              <p
+                style="
+                  margin-top:8px;
+                  font-size: 12px;
+                  font-family: Inter, sans-serif;
+                  color:#4B5563;
+                "
+              >
+                PDF (3 pages)
               </p>
-
-              <ul class="text-dark-text text-sm leading-6">
-                <li>.Durée: 7 semaines</li>
-                <li>.niveau : débutant</li>
-                <li>.6 chapitres</li>
-              </ul>
             </div>
 
-            <!-- IMAGE + BOUTON -->
-            <div class="flex flex-col items-center mr-24">
-              <img src="images/uxui.jpg"
-                   class="rounded-md object-cover mb-4"
-                   style="width:228px; height:152px;">
+            <!-- FLECHE -->
+            <div style="font-size:30px; color:#000;">→</div>
 
-              <a href="suivicours.html"
-                 class="bg-primary-violet text-white rounded-material flex items-center justify-center"
-                 style="width:161px; height:45px; font-size:16px;">
-                Suivi mes cours
-              </a>
+            <!-- VIDEO -->
+            <div class="flex flex-col items-center">
+              <img
+                src="images/video.png"
+                alt="Vidéo"
+                style="width:150px; height:150px; object-fit:contain;"
+              />
+              <p
+                style="
+                  margin-top:8px;
+                  font-size: 12px;
+                  font-family: Inter, sans-serif;
+                  color:#4B5563;
+                "
+              >
+                Vidéo (5 min)
+              </p>
             </div>
 
           </div>
+        </section>
 
+        <!-- FLECHE VERS LE BAS -->
+        <div class="flex justify-center mt-4">
+          <i class="fas fa-arrow-down"></i>
         </div>
 
-        <!-- BLOC CHAPITRE ACTUEL -->
-        <div style="
-            position: relative;
-            width: 540px;
-            height: 420px;
-            border: 1px solid #E2E8F0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-top:40px;
-        ">
+        <!-- BLOC 2 : PODCAST + EXAMEN BLANC -->
+        <section class="mt-8 flex justify-center">
+          <div class="flex items-center gap-40">
 
-            <div style="
-                background:#667EEA;
-                color:white;
-                padding:10px 15px;
-                border-radius:12px 12px 0 0;
-                font-size:18px;
-                font-weight:600;
-            ">
-                chapitre actuel
+            <!-- PODCAST -->
+            <div class="flex flex-col items-center">
+              <img
+                src="images/podcast.png"
+                alt="Podcast"
+                style="width:170px; height:130px; object-fit:cover; border-radius:8px;"
+              />
+              <p
+                style="
+                  margin-top:8px;
+                  font-size: 12px;
+                  font-family: Inter, sans-serif;
+                  color:#111827;
+                  font-weight:500;
+                "
+              >
+                PODCAST
+              </p>
             </div>
 
-            <h3 style="text-align:center; font-size:22px; font-weight:600; margin-top:15px; margin-bottom:10px;">
-                Chapitre 1 : Introduction
-            </h3>
-
-            <p style="text-align:center; font-size:15px; line-height:20px; color:#1D1D1B;">
-                Découvrez les bases de conception UX et sa <br>
-                importance dans le développement de produit
-            </p>
-
-            <!-- PROGRESS BAR -->
-            <div style="width:100%; display:flex; justify-content:center; margin-top:25px;">
-                <div style="
-                    width: 480px;
-                    height: 17px;
-                    background:#D9D9D9;
-                    border-radius:6px;
-                    position:relative;">
-                    <div style="
-                        width: 70%;
-                        height: 17px;
-                        background:#667EEA;
-                        border-radius:6px;
-                        position:absolute;">
-                    </div>
-                </div>
-
-                <span style="margin-left:10px; font-size:18px; font-weight:600; color:#1D1D1B;">70%</span>
+            <!-- EXAMEN BLANC -->
+            <div class="flex flex-col items-center">
+              <img
+                src="images/examen.png"
+                alt="Examen blanc"
+                style="width:170px; height:130px; object-fit:cover; border-radius:8px;"
+              />
+              <p
+                style="
+                  margin-top:8px;
+                  font-size: 12px;
+                  font-family: Inter, sans-serif;
+                  color:#111827;
+                  font-weight:500;
+                "
+              >
+                Examen blanc
+              </p>
             </div>
 
-            <!-- BUTTONS -->
-            <button style="
-                width:172px; height:46px; border-radius:50px;
-                background:#E2E8F0; color:#1A202C; font-weight:500;
-                position:absolute; left:35px; top:275px;">
-                Mode d’apprentissage
-            </button>
+          </div>
+        </section>
 
-      <button onclick="window.location.href='testerconnaisonnace.html'"
-        style="
-            width:166px; height:46px; border-radius:50px;
-            background:#667EEA; color:white;
-            display:flex; align-items:center; justify-content:center; gap:8px;
-            font-size:16px;
-            position:absolute; left:343px; top:275px;">
-    Continuer <i class="fas fa-chevron-right"></i>
-</button>
-
-
-
+        <!-- FLECHE VERS LE BAS (sous examen blanc) -->
+        <div class="flex justify-center mt-4">
+          <i class="fas fa-arrow-down"></i>
         </div>
+
+        <!-- BLOC 3 : QUIZIZZ -->
+        <section class="mt-4 flex flex-col items-center justify-center mb-16">
+          <img
+            src="images/quiz.png"
+            alt="Quizizz"
+            style="width:190px; height:auto; object-fit:contain;"
+          />
+          <p
+            style="
+              margin-top:10px;
+              font-size: 12px;
+              font-family: Inter, sans-serif;
+              color:#111827;
+            "
+          >
+            QUIZ (10 questions)
+          </p>
+        </section>
 
       </main>
-
     </div>
 
-    <!-- FOOTER IDENTIQUE -->
-   <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="w-full bg-primary-violet rounded-t-material mt-12 p-8"
             style="width: calc(100% + 140px); margin-left: -70px; margin-right: -70px;">
       <div class="w-full mx-auto"
@@ -282,7 +324,7 @@
       </div>
     </footer>
 
-</div>
+  </div><!-- fin container global -->
 
 </body>
 </html>

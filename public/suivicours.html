@@ -1,90 +1,117 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chrono Masters | Suivi mes cours</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
+
+
+  <title>Chrono Masters | Mes Cours</title>
+
+  <!-- CSS Tailwind compilé -->
   <link href="output.css" rel="stylesheet">
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome CDN -->
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-white min-h-screen font-inter">
 
-<!-- MAIN WRAPPER -->
-<div class="w-full mx-auto" style="max-width: calc(100% - 140px); margin-left:70px; margin-right:70px;">
+  <!-- Main Container -->
+  <div class="w-full mx-auto" style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px;">
 
-    <!-- HEADER IDENTIQUE -->
+    <!-- Header -->
     <header class="flex justify-between items-center w-full shadow-material bg-white px-6 py-4 mb-6"
-            style="width: calc(100% + 140px); margin-left:-70px; margin-right:-70px;">
+            style="width: calc(100% + 140px); margin-left: -70px; margin-right: -70px;">
       <div class="w-full mx-auto"
-           style="max-width: calc(100% - 140px); margin-left:70px; margin-right:70px; display:flex; justify-content:space-between; align-items:center;">
+           style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px; display:flex; justify-content:space-between; align-items:center;">
 
+        <!-- Logo -->
         <div class="flex items-center gap-2">
-          <img src="logo.png" style="height:36px;">
+          <img src="logo.png" alt="Chrono Masters" style="height:36px; width:auto;" />
           <h1 class="text-h1-material text-dark-text">Chrono Masters</h1>
         </div>
 
+        <!-- Search + Logout -->
         <div class="flex items-center gap-4">
           <div class="relative">
-            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-            <input type="text" placeholder="Search"
-                   class="border border-gray-outline rounded-material pl-10 pr-3 py-2 w-48">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="text-paragraph-material text-gray-400 border border-gray-outline rounded-material
+                     pl-10 pr-3 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-primary-violet"
+            />
           </div>
 
-          <button class="text-white bg-primary-violet rounded-material px-4 py-2">
+          <button class="text-paragraph-material text-white bg-primary-violet rounded-material px-4 py-2 hover:bg-gradient-purple transition-colors">
             Logout
           </button>
         </div>
       </div>
     </header>
 
-    <!-- GRID -->
+    <!-- GRID PRINCIPALE -->
     <div class="grid grid-cols-12 gap-5">
 
-      <!-- SIDEBAR IDENTIQUE -->
+       <!-- Sidebar -->
       <aside class="col-span-3 bg-white shadow-material rounded-material p-6">
         <nav class="flex flex-col gap-2">
+          
+          <!-- Home Menu Item -->
+          <a href="index.html" 
+   class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+    
+    <i class="fas fa-home text-dark-text"
+       style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
 
-          <a href="index.html" class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-home text-dark-text"></i>
-            <span class="text-dark-text font-medium">Home</span>
-          </a>
+    <span class="text-paragraph-material text-dark-text font-medium">Home</span>
+</a>
 
-          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-calendar-alt text-dark-text"></i>
-            <span class="text-dark-text font-medium">Emploi de temps</span>
+
+          <!-- Emploi de temps Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-calendar-alt text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Emploi de temps</span>
           </div>
 
-          <a href="cours.html" class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-book text-dark-text"></i>
-            <span class="text-dark-text font-medium">Course</span>
-          </a>
+          <!-- Course Menu Item -->
+          <a href="cours.html"
+   class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+    <i class="fas fa-book text-dark-text"
+       style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;">
+    </i>
 
-          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-heart text-dark-text"></i>
-            <span class="text-dark-text font-medium">Remove Pression</span>
+    <span class="text-paragraph-material text-dark-text font-medium">Course</span>
+</a>
+
+
+          <!-- Remove Pression Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-heart text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Remove Pression</span>
           </div>
 
-          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-upload text-dark-text"></i>
-            <span class="text-dark-text font-medium">Upload document</span>
+          <!-- Upload Document Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-upload text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Upload document</span>
           </div>
 
-          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline">
-            <i class="fas fa-user text-dark-text"></i>
-            <span class="text-dark-text font-medium">Profile</span>
+          <!-- Profile Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-user text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Profile</span>
           </div>
-
         </nav>
       </aside>
+
 
       <!-- MAIN CONTENT -->
       <main class="col-span-9">
@@ -327,33 +354,36 @@
     </div>
 
     <!-- FOOTER IDENTIQUE -->
+    <!-- Footer -->
     <footer class="w-full bg-primary-violet rounded-t-material mt-12 p-8"
-            style="width: calc(100% + 140px); margin-left:-70px; margin-right:-70px;">
+            style="width: calc(100% + 140px); margin-left: -70px; margin-right: -70px;">
       <div class="w-full mx-auto"
-           style="max-width: calc(100% - 140px); margin-left:70px; margin-right:70px;">
-
+           style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px;">
         <div class="grid grid-cols-12 gap-8">
 
           <div class="col-span-6">
             <h2 class="text-xl font-bold text-white mb-4">Crono Masters</h2>
-            <p class="text-gray-200">your app of time management...</p>
+            <p class="text-paragraph-material text-gray-200 mb-4">
+              Votre application Gestion de Temps offre une organisation optimale du travail et des études,
+              dans un environnement moderne, intuitif et collaboratif.
+            </p>
           </div>
 
           <div class="col-span-3">
             <h3 class="text-lg font-semibold text-white mb-4">Navigation</h3>
             <ul class="flex flex-col gap-2">
-              <li class="text-gray-200">Accueil</li>
-              <li class="text-gray-200">Gestion de temps</li>
-              <li class="text-gray-200">Cours</li>
-              <li class="text-gray-200">Pression</li>
+              <li class="text-paragraph-material text-gray-200">Accueil</li>
+              <li class="text-paragraph-material text-gray-200">Gestion de temps</li>
+              <li class="text-paragraph-material text-gray-200">Cours</li>
+              <li class="text-paragraph-material text-gray-200">Pression</li>
             </ul>
           </div>
 
           <div class="col-span-3">
             <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
-            <p class="text-gray-200">El Ghazela Esprit</p>
-            <p class="text-gray-200">29538127</p>
-            <p class="text-gray-200">contact@tmp.tn</p>
+            <p class="text-paragraph-material text-gray-200">El ghazela Esprit</p>
+            <p class="text-paragraph-material text-gray-200">29538127</p>
+            <p class="text-paragraph-material text-gray-200">contact@tmp.tn</p>
           </div>
 
         </div>
