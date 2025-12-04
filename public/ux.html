@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+  <title>Chrono Masters | Mes Cours</title>
+
+  <!-- CSS Tailwind compilé -->
+  <link href="output.css" rel="stylesheet">
+
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-white min-h-screen font-inter">
+
+  <!-- Main Container -->
+  <div class="w-full mx-auto" style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px;">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center w-full shadow-material bg-white px-6 py-4 mb-6"
+            style="width: calc(100% + 140px); margin-left: -70px; margin-right: -70px;">
+      <div class="w-full mx-auto"
+           style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px; display:flex; justify-content:space-between; align-items:center;">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="logo.png" alt="Chrono Masters" style="height:36px; width:auto;" />
+          <h1 class="text-h1-material text-dark-text">Chrono Masters</h1>
+        </div>
+
+        <!-- Search + Logout -->
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="text-paragraph-material text-gray-400 border border-gray-outline rounded-material
+                     pl-10 pr-3 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-primary-violet"
+            />
+          </div>
+
+          <button class="text-paragraph-material text-white bg-primary-violet rounded-material px-4 py-2 hover:bg-gradient-purple transition-colors">
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- GRID PRINCIPALE -->
+    <div class="grid grid-cols-12 gap-5">
+
+       <!-- Sidebar -->
+      <aside class="col-span-3 bg-white shadow-material rounded-material p-6">
+        <nav class="flex flex-col gap-2">
+          
+          <!-- Home Menu Item -->
+         <a href="index.html" 
+   class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+    
+    <i class="fas fa-home text-dark-text"
+       style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+
+    <span class="text-paragraph-material text-dark-text font-medium">Home</span>
+</a>
+
+
+          <!-- Emploi de temps Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-calendar-alt text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Emploi de temps</span>
+          </div>
+
+          <!-- Course Menu Item -->
+          <a href="cours.html"
+   class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+    <i class="fas fa-book text-dark-text"
+       style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;">
+    </i>
+
+    <span class="text-paragraph-material text-dark-text font-medium">Course</span>
+</a>
+
+
+          <!-- Remove Pression Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-heart text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Remove Pression</span>
+          </div>
+
+          <!-- Upload Document Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-upload text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Upload document</span>
+          </div>
+
+          <!-- Profile Menu Item -->
+          <div class="flex items-center gap-4 p-4 rounded-material hover:bg-gray-outline transition-colors cursor-pointer">
+            <i class="fas fa-user text-dark-text" style="width:20px; height:20px; display:inline-block; font-size:20px; line-height:20px; text-align:center;"></i>
+            <span class="text-paragraph-material text-dark-text font-medium">Profile</span>
+          </div>
+        </nav>
+      </aside>
+
+
+      <!-- MAIN CONTENT -->
+      <main class="col-span-9">
+
+        <div class="w-full px-12">
+
+          <!-- RETOUR -->
+          <div class="flex items-center gap-2 cursor-pointer text-dark-text mb-6">
+            <a href="cours.html" class="flex items-center gap-2">
+              <i class="fas fa-arrow-left"></i>
+              <span>Retour</span>
+            </a>
+          </div>
+
+          <!-- BARRE AFFICHAGE -->
+          <div class="w-full flex justify-center mb-10">
+            <div class="w-[453px] h-[78px] border border-gray-300 rounded-xl flex items-center justify-center text-dark-text text-xl font-semibold">
+                Affichage cours
+            </div>
+          </div>
+
+          <!-- TEXTE + IMAGE -->
+          <div class="flex justify-between items-start mt-5">
+
+            <!-- TEXTE -->
+            <div class="w-[348px]">
+              <h2 class="text-2xl font-bold mb-4">UX Design</h2>
+
+              <p class="text-dark-text text-base leading-tight mb-4">
+                Découvrez le processus de conception centré sur l'utilisateur
+              </p>
+
+              <ul class="text-dark-text text-sm leading-6">
+                <li>.Durée: 7 semaines</li>
+                <li>.niveau : débutant</li>
+                <li>.6 chapitres</li>
+              </ul>
+            </div>
+
+            <!-- IMAGE + BOUTON -->
+            <div class="flex flex-col items-center mr-24">
+              <img src="images/uxui.jpg"
+                   class="rounded-md object-cover mb-4"
+                   style="width:228px; height:152px;">
+
+              <a href="suivicours.html"
+                 class="bg-primary-violet text-white rounded-material flex items-center justify-center"
+                 style="width:161px; height:45px; font-size:16px;">
+                Suivi mes cours
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BLOC CHAPITRE ACTUEL -->
+        <div style="
+            position: relative;
+            width: 540px;
+            height: 420px;
+            border: 1px solid #E2E8F0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-top:40px;
+        ">
+
+            <div style="
+                background:#667EEA;
+                color:white;
+                padding:10px 15px;
+                border-radius:12px 12px 0 0;
+                font-size:18px;
+                font-weight:600;
+            ">
+                chapitre actuel
+            </div>
+
+            <h3 style="text-align:center; font-size:22px; font-weight:600; margin-top:15px; margin-bottom:10px;">
+                Chapitre 1 : Introduction
+            </h3>
+
+            <p style="text-align:center; font-size:15px; line-height:20px; color:#1D1D1B;">
+                Découvrez les bases de conception UX et sa <br>
+                importance dans le développement de produit
+            </p>
+
+            <!-- PROGRESS BAR -->
+            <div style="width:100%; display:flex; justify-content:center; margin-top:25px;">
+                <div style="
+                    width: 480px;
+                    height: 17px;
+                    background:#D9D9D9;
+                    border-radius:6px;
+                    position:relative;">
+                    <div style="
+                        width: 70%;
+                        height: 17px;
+                        background:#667EEA;
+                        border-radius:6px;
+                        position:absolute;">
+                    </div>
+                </div>
+
+                <span style="margin-left:10px; font-size:18px; font-weight:600; color:#1D1D1B;">70%</span>
+            </div>
+
+            <!-- BUTTONS -->
+            <button style="
+                width:172px; height:46px; border-radius:50px;
+                background:#E2E8F0; color:#1A202C; font-weight:500;
+                position:absolute; left:35px; top:275px;">
+                Mode d’apprentissage
+            </button>
+
+      <button onclick="window.location.href='testerconnaisonnace.html'"
+        style="
+            width:166px; height:46px; border-radius:50px;
+            background:#667EEA; color:white;
+            display:flex; align-items:center; justify-content:center; gap:8px;
+            font-size:16px;
+            position:absolute; left:343px; top:275px;">
+    Continuer <i class="fas fa-chevron-right"></i>
+</button>
+
+
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <!-- FOOTER IDENTIQUE -->
+   <!-- Footer -->
+    <footer class="w-full bg-primary-violet rounded-t-material mt-12 p-8"
+            style="width: calc(100% + 140px); margin-left: -70px; margin-right: -70px;">
+      <div class="w-full mx-auto"
+           style="max-width: calc(100% - 140px); margin-left: 70px; margin-right: 70px;">
+        <div class="grid grid-cols-12 gap-8">
+
+          <div class="col-span-6">
+            <h2 class="text-xl font-bold text-white mb-4">Crono Masters</h2>
+            <p class="text-paragraph-material text-gray-200 mb-4">
+              Votre application Gestion de Temps offre une organisation optimale du travail et des études,
+              dans un environnement moderne, intuitif et collaboratif.
+            </p>
+          </div>
+
+          <div class="col-span-3">
+            <h3 class="text-lg font-semibold text-white mb-4">Navigation</h3>
+            <ul class="flex flex-col gap-2">
+              <li class="text-paragraph-material text-gray-200">Accueil</li>
+              <li class="text-paragraph-material text-gray-200">Gestion de temps</li>
+              <li class="text-paragraph-material text-gray-200">Cours</li>
+              <li class="text-paragraph-material text-gray-200">Pression</li>
+            </ul>
+          </div>
+
+          <div class="col-span-3">
+            <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+            <p class="text-paragraph-material text-gray-200">El ghazela Esprit</p>
+            <p class="text-paragraph-material text-gray-200">29538127</p>
+            <p class="text-paragraph-material text-gray-200">contact@tmp.tn</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
