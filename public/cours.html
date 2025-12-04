@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
   <title>Chrono Masters | Mes Cours</title>
 
   <!-- CSS Tailwind compilé -->
@@ -151,11 +155,12 @@
               <p>enseignant(e) : farida</p>
             </div>
 
-            <button class="open-course bg-primary-violet text-white rounded-material mt-3"
-                    data-course="ux"
-                    style="width:149px; height:34px; font-size:14px;">
-              continuer
-            </button>
+             <a href="ux.html"
+   class="bg-primary-violet text-white rounded-material mt-3 flex items-center justify-center"
+   style="width:149px; height:34px; font-size:14px;">
+  continuer
+</a>
+
           </article>
 
           <!-- COURS 3 -->
@@ -280,194 +285,9 @@
   <!-- SCRIPT POUR L'AFFICHAGE COURS -->
   <script>
 
-document.querySelectorAll(".open-course").forEach(btn => {
-    btn.addEventListener("click", function () {
 
-        const course = this.dataset.course;
+ 
 
-        if (course === "ux") {
-
-        document.getElementById("main-content").innerHTML = `
-
-<div class="w-full px-12">
-
-  <!-- BOUTON RETOUR -->
-  <div class="flex items-center gap-2 cursor-pointer text-dark-text mb-6"
-       onclick="location.reload()">
-    <i class="fas fa-arrow-left"></i>
-    <span>Retour</span>
-  </div>
-
-  <!-- BARRE AFFICHAGE COURS -->
-  <div class="w-full flex justify-center mb-10">
-    <div class="w-[453px] h-[78px] border border-gray-300 rounded-xl
-                flex items-center justify-center text-dark-text text-xl font-semibold">
-        Affichage cours
-    </div>
-  </div>
-
-  <!-- TEXTE + IMAGE ALIGNÉS COMME FIGMA -->
-  <div class="flex justify-between items-start mt-5">
-
-    <!-- TEXTE UX -->
-    <div class="w-[348px]">
-      <h2 class="text-2xl font-bold mb-4">UX Design</h2>
-
-      <p class="text-dark-text text-base leading-tight mb-4">
-        Découvrez le processus de conception centré sur l'utilisateur
-      </p>
-
-      <ul class="text-dark-text text-sm leading-6">
-        <li>.Durée: 7 semaines</li>
-        <li>.niveau : débutant</li>
-        <li>.6 chapitres</li>
-      </ul>
-    </div>
-
-    <!-- IMAGE + BOUTON -->
-    <div class="flex flex-col items-center mr-24">
-      <img src="images/uxui.jpg"
-           class="rounded-md object-cover mb-4"
-           style="width:228px; height:152px;">
-
-      <button class="bg-primary-violet text-white rounded-material px-6 py-2"
-              style="width:161px; height:45px;">
-        Suivi mes cours
-      </button>
-    </div>
-
-  </div> <!-- FIN DU BLOC TEXTE+IMAGE  -->
-
-</div> <!-- FIN DU CONTAINER PRINCIPAL  -->
-
-<!-- BLOC CHAPITRE ACTUEL -->
-<div style="
-    position: relative;
-    width: 540px;
-    height: 420px;  /* HAUTEUR FIXÉE POUR AFFICHER LES BOUTONS */
-    border: 1px solid #E2E8F0;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    padding: 20px;
-">
-
-    <!-- HEADER VIOLET -->
-    <div style="
-        background:#667EEA; 
-        color:white;
-        padding:10px 15px;
-        border-radius:12px 12px 0 0;
-        font-size:18px; 
-        font-weight:600;
-    ">
-        chapitre actuel
-    </div>
-
-    <!-- TITRE -->
-    <h3 style="
-        text-align:center;
-        font-size:22px;
-        font-weight:600;
-        margin-top:15px;
-        margin-bottom:10px;
-    ">
-        Chapitre 1 : Introduction
-    </h3>
-
-    <!-- DESCRIPTION -->
-    <p style="
-        text-align:center;
-        font-size:15px;
-        line-height:20px;
-        color:#1D1D1B;
-    ">
-        Découvrez les bases de conception UX et sa <br>
-        importance dans le développement de produit
-    </p>
-
-    <!-- BARRE DE PROGRESSION -->
-    <div style="width:100%; display:flex; justify-content:center; margin-top:25px;">
-
-        <div style="
-            width: 480px;
-            height: 17px;
-            background:#D9D9D9;
-            border-radius:6px;
-            position:relative;
-        ">
-            <div style="
-                width: 70%;
-                height: 17px;
-                background:#667EEA;
-                border-radius:6px;
-                position:absolute;
-                top:0;
-                left:0;
-            ">
-            </div>
-        </div>
-
-        <span style="
-            margin-left:10px;
-            font-size:18px;
-            font-weight:600;
-            color:#1D1D1B;
-        ">70%</span>
-    </div>
-
-    <!-- BOUTONS BAS (position exacte) -->
-
-    <!-- Mode d’apprentissage -->
-    <button 
-        style="
-            width:172px;
-            height:46px;
-            border-radius:50px;
-            background:#E2E8F0;
-            color:#1A202C;
-            font-weight:500;
-
-            position:absolute;
-            left:35px;
-            top:275px;
-        ">
-        Mode d’apprentissage
-    </button>
-
-    <!-- Continuer -->
-    <button 
-        style="
-            width:166px;
-            height:46px;
-            border-radius:50px;
-            background:#667EEA;
-            color:white;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap:8px;
-            font-size:16px;
-
-            position:absolute;
-            left:343px;
-            top:275px;
-        ">
-        continuer <i class="fas fa-chevron-right"></i>
-    </button>
-
-</div>
-
-
-
-
-`;
-
-
-        }
-
-    });
-});
 
   </script>
 
